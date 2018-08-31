@@ -12,13 +12,13 @@ def quad(a, b, c):
     if disc >= 0:
         r1 = (-b+(disc**0.5))/(2*a)
         r2 = (-b-(disc**0.5))/(2*a)
-        return [r1, r2]
+        return (r1, r2)
 
 a = int(input('enter the first coefficient'))
 b = int(input('enter the second coefficient'))
 c = int(input('enter the third coefficient'))
 
-array [quad(a,b,c)]
+array = quad(a,b,c)
 
 if len(array) > 1:
     print (array[0], "and", array[1])
