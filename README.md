@@ -41,3 +41,9 @@ The key to figuring out this assignment is that when the sentence is split, the 
 ### Code
 
 https://github.com/vpearce14/Engineering_4_Notebook/blob/master/Python/Loops_and_Strings.py
+
+## Pinata Shaped Man
+
+### Lessons Learned
+
+Dr. Shields' advice is sound: take small bites. This assignment was pretty complex so it helped to just go layer by layer and do lots of small tests.
