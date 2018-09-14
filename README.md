@@ -61,3 +61,13 @@ The first step of this assignment was to solder male-male headers onto the pi. T
 ### Code
 
 https://github.com/vpearce14/Engineering_4_Notebook/blob/master/Scripts/GPIOpins.sh
+
+## GPIO Python
+
+### Lessons Learned
+
+Google was my best friend in this assignment. Sourceforg.net was most helpful, as it showed me the basics of setting up the GPIO. 
+
+### Code
+
+https://github.com/vpearce14/Engineering_4_Notebook/blob/master/Scripts/GPIOpython.py
