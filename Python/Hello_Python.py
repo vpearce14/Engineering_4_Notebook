@@ -1,16 +1,12 @@
-# Automatic Dice Roller
-# Written by Vincent
+import PPi.GPIO as GPIO
+from time import sleep
 
-from random import randint
-#import keyboard
-
-print ("Automatic Dice Roller")
-
-#print ("Press enter to roll or x then enter to exit")
-
-while True:
-   text = input('Press enter to roll or x then enter to exit')
-   if text == '':
-       print (randint(1,6))
-   if text == 'x':
-       break
+gpio mode 0 out
+gpio mode 1 out
+for i in range (0,10):
+    gpio write 0 1
+    gpio write 1 1
+    sleep 1
+    gpio write 0 0
+    gpio write 1 0
+    sleep 1
