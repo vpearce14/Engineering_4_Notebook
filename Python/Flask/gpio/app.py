@@ -10,18 +10,17 @@ app = Flask(__name__)
 
 @app.route("/", methods=["GET","POST"])
 def index():
-	if request.method == "P2ST":
-		GPIO.output(17,GPIO.HIGH)
-		GPIO.output(18,GPIO.LOW)
+	if request.method == "POST":
                 msg = request.form.get("submitBtn1")
-	elif request.method == "POST":
-		GPIO.output(18,GPIO.HIGH)
-		GPIO.output(17,GPIO.LOW)
 		msg = request.form.get("submitBtn2")
 	else:
 		GPIO.output(17,GPIO.LOW)
 		GPIO.output(18,GPIO.LOW)
 		msg = "No click yet."
+	if msg == "You clicked!":
+		GPIO.output(17,GPIO.HIGH)
+	elif msg == "You clicked2!":
+		GPIO.output(18,GPIO.HIGH)
 	return render_template("index.html", msg=msg)
 
 if __name__ == "__main__":
