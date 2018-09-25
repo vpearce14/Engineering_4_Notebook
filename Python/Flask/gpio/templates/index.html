@@ -6,10 +6,30 @@
 <h2 style="backround-color:violet;">Click a Button and a light will turn on!</h2>
 <body>
 {{msg}}
+{% if msg == "ll" %}
 <form method="POST">
-	<input onclick="form.submit()" type="checkbox" name="submitBtn1" value="You clicked!">Click me!</button>
-	<input onclick="form.submit()" type="checkbox" name="submitBtn2" value="You clicked2!">No, Click me!</button>
+	<input onclick="form.submit()" type="checkbox" name="submitBtn1" value="You clicked1o!">Click me!</button>
+	<input onclick="form.submit()" type="checkbox" name="submitBtn2" value="You clicked2o!">No, Click me!</button>
 </form>
+{% endif %}
+{% if msg == "lh" %}
+<form method="POST">
+        <input onclick="form.submit()" type="checkbox" name="submitBtn1" value="You clicked1h!">Click me!</button>
+	<input onclick="form.submit()" type="checkbox" name="submitBtn2" value="You unclicked2o!" checked>No, Click me!</button>	
+</form>
+{% endif %}
+{% if msg == "hh" %}
+<form method="POST">
+        <input onclick="form.submit()" type="checkbox" name="submitBtn1" value="You unclicked1h!" checked>Click me!$
+	<input onclick="form.submit()" type="checkbox" name="submitBtn2" value="You unclicked2h!" checked>No, Click me!</button>
+	
+</form>
+{% endif %}
+{% if msg == "hl" %}
+<form method="POST">
+        <input onclick="form.submit()" type="checkbox" name="submitBtn1" value="You unclicked1o!" checked>Click me!</button>
+	<input onclick="form.submit()" type="checkbox" name="submitBtn2" value="You clicked2h!">No, Click me!</button>
+</form>
+{% endif %}
 </body>
 </html>
-
