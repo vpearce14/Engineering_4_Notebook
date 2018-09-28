@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head style="backround-color:DodgerBlue;">
+	<title>GPIO with Flask!</title>
+</head>
+<h2 style="backround-color:violet;">Click a Button and a light will turn on!</h2>
+<body>
+{{msg}}
+{% if msg == "ll" %}
+<form method="POST">
+	<input onclick="form.submit()" type="checkbox" name="submitBtn1" value="co">Click me!</button>
+	<input onclick="form.submit()" type="checkbox" name="submitBtn2" value="uo">No, Click me!</button>
+</form>
+{% endif %}
+{% if msg == "lh" %}
+<form method="POST">
+        <input onclick="form.submit()" type="checkbox" name="submitBtn1" value="ch">Click me!</button>
+	<input onclick="form.submit()" type="checkbox" name="submitBtn2" value="uo" checked>No, Click me!</button>	
+</form>
+{% endif %}
+{% if msg == "hh" %}
+<form method="POST">
+        <input onclick="form.submit()" type="checkbox" name="submitBtn1" value="uh!" checked>Click me!$
+	<input onclick="form.submit()" type="checkbox" name="submitBtn2" value="uh!" checked>No, Click me!</button>
+	
+</form>
+{% endif %}
+{% if msg == "hl" %}
+<form method="POST">
+        <input onclick="form.submit()" type="checkbox" name="submitBtn1" value="uo!" checked>Click me!</button>
+	<input onclick="form.submit()" type="checkbox" name="submitBtn2" value="ch!">No, Click me!</button>
+</form>
+{% endif %}
+</body>
+</html>
