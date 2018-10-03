@@ -1,35 +1,14 @@
 <!doctype html>
 <html>
-<head style="backround-color:DodgerBlue;">
+<head  >
 	<title>GPIO with Flask!</title>
 </head>
-<h2 style="backround-color:violet;">Click a Button and a light will turn on!</h2>
+<h2 style="backround-color:87f566;">Click a Button and a light will turn on!</h2>
 <body>
 {{msg}}
-{% if msg == "ll" %}
 <form method="POST">
-	<input onclick="form.submit()" type="checkbox" name="submitBtn1" value="co">Click me!</button>
-	<input onclick="form.submit()" type="checkbox" name="submitBtn2" value="uo">No, Click me!</button>
+        <input onclick="form.submit()" type="checkbox" name="submitBtn1" value="1"{%if led1 ==1%}checked{%endif%}>Click me!</button><p>
+	<input onclick="form.submit()" type="checkbox" name="submitBtn2" value="2"{%if led2 ==1%}checked{%endif%}>No, Click me!</button>
 </form>
-{% endif %}
-{% if msg == "lh" %}
-<form method="POST">
-        <input onclick="form.submit()" type="checkbox" name="submitBtn1" value="ch">Click me!</button>
-	<input onclick="form.submit()" type="checkbox" name="submitBtn2" value="uo" checked>No, Click me!</button>	
-</form>
-{% endif %}
-{% if msg == "hh" %}
-<form method="POST">
-        <input onclick="form.submit()" type="checkbox" name="submitBtn1" value="uh!" checked>Click me!$
-	<input onclick="form.submit()" type="checkbox" name="submitBtn2" value="uh!" checked>No, Click me!</button>
-	
-</form>
-{% endif %}
-{% if msg == "hl" %}
-<form method="POST">
-        <input onclick="form.submit()" type="checkbox" name="submitBtn1" value="uo!" checked>Click me!</button>
-	<input onclick="form.submit()" type="checkbox" name="submitBtn2" value="ch!">No, Click me!</button>
-</form>
-{% endif %}
 </body>
 </html>

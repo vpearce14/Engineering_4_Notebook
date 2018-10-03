@@ -1,34 +1,80 @@
 <!doctype html>
 <html>
-<head style="backround-color:DodgerBlue;">
+<head>
 	<title>GPIO with Flask!</title>
+	<style>
+		body, html {
+		height:  100%;
+		}
+		
+		.bg {
+		background-image: url("ink_(3).png");
+		height: 100%;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		}
+
+		.switch{
+		position: relative;
+		display: inline-block;
+		width: 60px;
+		height: 34px;
+		}
+		
+		.switch input {display:none;}
+
+		.slider{
+		position: absolute;
+		cursor: pointer;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: #ccc;
+		-webkit-transition: .4s;
+		transition: .4s;
+		}
+
+		.slider:before {
+		position: absolute;
+		content:"";
+		height:26px;
+		width:26px;
+		left: 4px;
+		bottom: 4px;
+		background-color: white;
+		-webkit-transition: .4s;
+		transition: .4s;
+		}
+
+		input:checked + .slider {
+		background-color: #2196F3;
+		}
+
+		input:focus + .slider {
+		box-shadow: 0 0 1px #2196F3;
+		}
+
+		input:checked + .slider:before {
+		-webkit-transform: translateX(26px);
+		-ms-transform: translateX(26px);
+		transform: translateX(26px);
+		}
+	</style>
 </head>
-<h2 style="backround-color:87f566;">Click a Button and a light will turn on!</h2>
+<h2 style="backround-color:red;">Click on a switch and a light will turn on!</h2>
 <body>
-{{msg}}
-{% if msg == "00" %}
 <form method="POST">
-	<input onclick="form.submit()" type="checkbox" name="submitBtn1" value="1high">Click me!</button>
-	<input onclick="form.submit()" type="checkbox" name="submitBtn1" value="2high">No, Click me!</button>
+	<label class="switch">
+        <input onclick="form.submit()" type="checkbox" name="submitBtn1" value="1"{%if led1 ==1%}checked{%endif%}>Click</button>
+	<span class="slider"></span>
+	</label>
+
+	<label class="switch">
+	<input onclick="form.submit()" type="checkbox" name="submitBtn2" value="2"{%if led2 ==1%}checked{%endif%}>Click</button>
+	<span class="slider"></span>
+        </label>
 </form>
-{% endif %}
-{% if msg == "01" %}
-<form method="POST">
-        <input onclick="form.submit()" type="checkbox" name="submitBtn1" value="1high">Click me!</button>
-	<input onclick="form.submit()" type="checkbox" name="submitBtn1" value="2low" checked>No, Click me!</button>	
-</form>
-{% endif %}
-{% if msg == "11" %}
-<form method="POST">
-        <input onclick="form.submit()" type="checkbox" name="submitBtn1" value="1low" checked>Click me!</button>
-	<input onclick="form.submit()" type="checkbox" name="submitBtn1" value="2low" checked>No, Click me!</button>
-</form>
-{% endif %}
-{% if msg == "10" %}
-<form method="POST">
-        <input onclick="form.submit()" type="checkbox" name="submitBtn1" value="1low" checked>Click me!</button>
-	<input onclick="form.submit()" type="checkbox" name="submitBtn1" value="2high">No, Click me!</button>
-</form>
-{% endif %}
 </body>
 </html>

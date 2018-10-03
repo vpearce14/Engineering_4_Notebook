@@ -20,8 +20,9 @@ def index():
 		GPIO.output(18,GPIO.LOW)
 	msg1 = GPIO.input(17)
         msg2 = GPIO.input(18)
-	msg= str(msg1) + str(msg2)
+	msg= "Click a slider to turn an LED on or off"
 	print msg
-	return render_template("index.html", msg=msg, led1=msg1, led2=msg2)
+	return render_template("index.html", msg=msg,
+ led1=msg1, led2=msg2)
 if __name__ == "__main__":
 	app.run(host="0.0.0.0", port=80)
