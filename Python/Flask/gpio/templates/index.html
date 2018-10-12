@@ -4,7 +4,8 @@
 	<title>GPIO with Flask!</title>
 	<style>
 		body{
-		background-image: url('../static/ink_(3).png');		
+		background-image: url('../static/ink_(3).png');
+		margin-left: 150px;
 		}
 
 
@@ -58,6 +59,9 @@
 </head>
 <h2 style="backround-color:red;">Click on a switch and a light will turn on!</h2>
 <body>
+<br>
+<br>
+<br>
 <form method="POST">
 	<label class="switch">
         <input onclick="form.submit()" type="checkbox" name="submitBtn1" value="1"{%if led1 ==1%}checked{%endif%}>Click</button>
