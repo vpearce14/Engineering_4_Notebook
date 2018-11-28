@@ -86,3 +86,15 @@ gfkf
 ## Hello Flask
 
 ## Flask GPIO
+
+## GPIO I2C
+
+## Headless
+
+## Pi camera
+
+## Hack your stuff
+
+## Parent detector
+
+## Stop motion
