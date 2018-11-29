@@ -46,7 +46,7 @@ https://github.com/vpearce14/Engineering_4_Notebook/blob/master/Python/Loops_and
 
 ### Lessons Learned
 
-Dr. Shields' advice is sound: take small bites. This assignment was pretty complex so it helped to just go layer by layer and do lots of small tests. Another thing that was helpful was to use an array to store the user's current guesses, then attach the characters in the array into a string before printing them.
+In this one I had to make a hangman game. Dr. Shields' advice is sound: take small bites. This assignment was pretty complex so it helped to just go layer by layer and do lots of small tests. Another thing that was helpful was to use an array to store the user's current guesses, then attach the characters in the array into a string before printing them.
 
 ### Code 
 
@@ -71,3 +71,76 @@ Google was my best friend in this assignment. Sourceforg.net was most helpful, a
 ### Code
 
 https://github.com/vpearce14/Engineering_4_Notebook/blob/master/Scripts/GPIOpython.py
+
+
+## GPIO SSH
+
+### Lessons Learned
+
+This one was pretty easy once I got the ssh to connect. I had to do some googling to find that 
+
+### Code
+
+## Hello Flask
+
+### Lessons Learned
+
+
+
+### Code
+
+## Flask GPIO
+
+### Lessons Learned
+
+### Code
+
+## GPIO I2C
+
+### Lessons Learned
+
+### Code
+
+## Headless
+
+### Lessons Learned
+
+### Code
+
+## Pi camera
+
+### Lessons Learned
+
+For some reason, my pi would freeze every time it tried to take a picture. I tried looking at the pi logs but didn't find anything. It only worked when I switched the board itself. I still can't figure out why that helped, but I'm glad the issue is fixed.
+
+### Code
+
+### Media
+
+## Hack your stuff
+
+### Lessons Learned
+
+### Code
+
+### Media
+
+## Parent detector
+
+### Lessons Learned
+
+This time I made a motion-detector camera system. It scares me how easy it would be for my parents to actually create and implement one of these things.
+
+### Code
+
+### Media
+
+## Stop motion
+
+### Lessons Learned
+
+In this assignment, I created a system where the press of a button would take a picture, then name it numerically. Then I took 
+
+### Code
+
+### Media
