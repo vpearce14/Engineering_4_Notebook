@@ -79,21 +79,25 @@ https://github.com/vpearce14/Engineering_4_Notebook/blob/master/Scripts/GPIOpyth
 
 This one was pretty easy once I got the ssh to connect. I had to do some googling to find that 
 
-### Code
-
 ## Hello Flask
 
 ### Lessons Learned
 
-
+This was just a simple introduction to flask.
 
 ### Code
+
+https://github.com/vpearce14/Engineering_4_Notebook/blob/master/Python/Flask/hello_world/app.py
 
 ## Flask GPIO
 
 ### Lessons Learned
 
+This assignment was a massive pain. It was hard to get the webpage up, hard to put it all together, and hard to have a backround imge actually load.
+
 ### Code
+
+https://github.com/vpearce14/Engineering_4_Notebook/tree/master/Python/Flask/gpio
 
 ## GPIO I2C
 
@@ -105,6 +109,8 @@ This one was pretty easy once I got the ssh to connect. I had to do some googlin
 
 ### Lessons Learned
 
+Things can run at startup!!!
+
 ### Code
 
 ## Pi camera
@@ -115,6 +121,10 @@ For some reason, my pi would freeze every time it tried to take a picture. I tri
 
 ### Code
 
+https://github.com/vpearce14/Engineering_4_Notebook/blob/master/Python/camera_test01.py
+https://github.com/vpearce14/Engineering_4_Notebook/blob/master/Python/camera_test02.py
+https://github.com/vpearce14/Engineering_4_Notebook/blob/master/Python/camera_test03.py
+
 ### Media
 
 ## Hack your stuff
@@ -122,6 +132,8 @@ For some reason, my pi would freeze every time it tried to take a picture. I tri
 ### Lessons Learned
 
 ### Code
+
+https://github.com/vpearce14/Engineering_4_Notebook/blob/master/Python/hack.py
 
 ### Media
 
@@ -133,6 +145,8 @@ This time I made a motion-detector camera system. It scares me how easy it would
 
 ### Code
 
+https://github.com/vpearce14/Engineering_4_Notebook/blob/master/Python/parent-detector.py
+
 ### Media
 
 ## Stop motion
@@ -142,5 +156,7 @@ This time I made a motion-detector camera system. It scares me how easy it would
 In this assignment, I created a system where the press of a button would take a picture, then name it numerically. Then I took 
 
 ### Code
+
+https://github.com/vpearce14/Engineering_4_Notebook/blob/master/Python/StopMotion.py
 
 ### Media
