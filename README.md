@@ -153,10 +153,11 @@ https://github.com/vpearce14/Engineering_4_Notebook/blob/master/Python/parent-de
 
 ### Lessons Learned
 
-In this assignment, I created a system where the press of a button would take a picture, then name it numerically. Then I took 
+In this assignment, I created a system where the press of a button would take a picture, then name it numerically. Then I took the images and compiled them into a video. At least, that's what was supposed to happen. For some reason it would only take two or three frames. I downloaded a program to make the animation smaller, but it still didn't work. 
 
 ### Code
 
 https://github.com/vpearce14/Engineering_4_Notebook/blob/master/Python/StopMotion.py
 
 ### Media
+
