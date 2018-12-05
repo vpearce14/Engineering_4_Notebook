@@ -26,7 +26,7 @@ https://github.com/vpearce14/Engineering_4_Notebook/blob/master/Python/Calculato
 
 ### Lessons Learned
 
-When you edit a file, you have to re-add it to git or it won't commit. 
+When you edit a file, you have to re-add it to git or it won't commit. It's important to 
 
 ### Code
 
@@ -103,7 +103,11 @@ https://github.com/vpearce14/Engineering_4_Notebook/tree/master/Python/Flask/gpi
 
 ### Lessons Learned
 
+In this assignment, I gathered acceleration data and printed it on the screen, each axis on a seperate line.
+
 ### Code
+
+https://github.com/vpearce14/Engineering_4_Notebook/blob/master/Python/shapes.py
 
 ## Headless
 
@@ -112,6 +116,8 @@ https://github.com/vpearce14/Engineering_4_Notebook/tree/master/Python/Flask/gpi
 Things can run at startup!!!
 
 ### Code
+
+https://github.com/vpearce14/Engineering_4_Notebook/blob/master/Python/accell.py
 
 ## Pi camera
 
@@ -130,6 +136,8 @@ https://github.com/vpearce14/Engineering_4_Notebook/blob/master/Python/camera_te
 ## Hack your stuff
 
 ### Lessons Learned
+
+So for this one I was supposed to take an alarm and rewire it to turn on through a pi and an external output. I decided to use a poteniometer. I was hoping to get an actual analog reading from it, but according to the internet, Pis are not capable of analog reading through gpio without a chip that I couldn't find in the Sigma lab.
 
 ### Code
 
