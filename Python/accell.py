@@ -24,6 +24,9 @@ disp.begin()
 # Clear display.
 disp.clear()
 disp.display()
+buckets = [0, 0]
+buckets = [0] * 21
+i = 0
 
 # Create blank image for drawing.
 # Make sure to create image with mode '1' for 1-bit color.
@@ -57,6 +60,16 @@ while True:
     accel_x = accel_x/100
 # Write two lines of text.
     draw.rectangle((0,0,width,height), outline=0, fill=0)
+    if i < 20:
+        buckets[i]=accel_z
+        for t in range(i-1):
+            draw.line((t*5+10,buckets[t]*5,t*5+15,buckets[t+1]*5), fill=255)
+        i = i+1
+    else:
+        buckets.pop(0)
+        buckets.append(accel_z)
+        for t in range(20):
+            draw.line((t*5+10,buckets[t]*5,t*5+15,buckets[t+1]*5), fill=255)
     draw.line((10,bottom, 10, top), fill=255)
     draw.line((10,bottom, 100, bottom), fill=255)
     draw.text((85, top), 'Z:'+str(accel_z),  font=font, fill=255)
