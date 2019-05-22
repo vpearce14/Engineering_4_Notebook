@@ -1,3 +1,12 @@
+# Hey, next years folks!!
+
+Here's some helpful tips:
+1. Join BACON! you'll learn engineering skills twice as fast and make cool nerd friends
+2. Choose your partners wisely. It's much more important to have someone who motivates you than someone you can socialize with
+3. Focus on one thing at a time.
+4. To stack stls, open them in meshmixer, add a very thin cylinder, make it very small, then merge all parts.
+5. And most importantly: Everything has a price. 3D printing, servos, arduinos, and motors are all expensive. Don't waste anything!!
+
 # Engineering 4 Notebook
 
 This is where all my stuff will go!
