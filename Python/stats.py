@@ -1,5 +1,5 @@
-# Copyright (c) 2014 Adafruit Industries
-# Author: Tony DiCola
+# Copyright (c) 2017 Adafruit Industries
+# Author: Tony DiCola & James DeVito
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -20,9 +20,6 @@
 # THE SOFTWARE.
 import time
 
-# Import the LSM303 module.
-import Adafruit_Python_LSM303
-
 import Adafruit_GPIO.SPI as SPI
 import Adafruit_SSD1306
 
@@ -30,11 +27,10 @@ from PIL import Image
 from PIL import ImageDraw
 from PIL import ImageFont
 
-# Create a LSM303 instance.
-lsm303 = Adafruit_LSM303.LSM303()
+import subprocess
 
 # Raspberry Pi pin configuration:
-RST = 24
+RST = 24     # on the PiOLED this pin isnt used
 # Note the following are only used with SPI:
 DC = 23
 SPI_PORT = 0
@@ -71,7 +67,6 @@ disp = Adafruit_SSD1306.SSD1306_128_64(rst=RST, i2c_address=0x3d)
 # on a Raspberry Pi with the 128x32 display you might use:
 # disp = Adafruit_SSD1306.SSD1306_128_32(rst=RST, dc=DC, sclk=18, din=25, cs=22)
 
-
 # Initialize library.
 disp.begin()
 
@@ -89,38 +84,47 @@ image = Image.new('1', (width, height))
 draw = ImageDraw.Draw(image)
 
 # Draw a black filled box to clear the image.
-
+draw.rectangle((0,0,width,height), outline=0, fill=0)
 
 # Draw some shapes.
 # First define some constants to allow easy resizing of shapes.
-padding = 2
-shape_width = 20
+padding = -2
 top = padding
 bottom = height-padding
 # Move left to right keeping track of the current x position for drawing shapes.
-x = padding
+x = 0
+
 
 # Load default font.
 font = ImageFont.load_default()
 
 # Alternatively load a TTF font.  Make sure the .ttf font file is in the same directory as the python script!
 # Some other nice fonts to try: http://www.dafont.com/bitmap.php
-#font = ImageFont.truetype('Minecraftia.ttf', 8)
-    # Read the X, Y, Z axis acceleration values and print them.
-while True:
-    accel, mag = lsm303.read()
-    # Grab the X, Y, Z components from the reading and print them out.
-    accel_x, accel_y, accel_z = accel
-    mag_x, mag_y, mag_z = mag
-    accel_z = accel_z/100
-    accel_y = accel_y/100
-    accel_x = accel_x/100
-# Write two lines of text.
-    draw.rectangle((0,0,width,height), outline=0, fill=0)
-    draw.text((x, top), 'Z:'+str(accel_z),  font=font, fill=255)
-    draw.text((x, top+20), 'Y:'+str(accel_y), font=font, fill=255)
-    draw.text((x, top+40), 'X:'+str(accel_x), font=font, fill=255)
+# font = ImageFont.truetype('Minecraftia.ttf', 8)
 
-# Display image.
+while True:
+
+    # Draw a black filled box to clear the image.
+    draw.rectangle((0,0,width,height), outline=0, fill=0)
+
+    # Shell scripts for system monitoring from here : https://unix.stackexchange.com/questions/119126/command-to-display-memory-usage-disk-usage-and-cpu-load
+    cmd = "hostname -I | cut -d\' \' -f1"
+    IP = subprocess.check_output(cmd, shell = True )
+    cmd = "top -bn1 | grep load | awk '{printf \"CPU Load: %.2f\", $(NF-2)}'"
+    CPU = subprocess.check_output(cmd, shell = True )
+    cmd = "free -m | awk 'NR==2{printf \"Mem: %s/%sMB %.2f%%\", $3,$2,$3*100/$2 }'"
+    MemUsage = subprocess.check_output(cmd, shell = True )
+    cmd = "df -h | awk '$NF==\"/\"{printf \"Disk: %d/%dGB %s\", $3,$2,$5}'"
+    Disk = subprocess.check_output(cmd, shell = True )
+
+    # Write two lines of text.
+
+    draw.text((x, top),       "IP: " + str(IP),  font=font, fill=255)
+    draw.text((x, top+8),     str(CPU), font=font, fill=255)
+    draw.text((x, top+16),    str(MemUsage),  font=font, fill=255)
+    draw.text((x, top+25),    str(Disk),  font=font, fill=255)
+
+    # Display image.
     disp.image(image)
     disp.display()
+    time.sleep(.1)
